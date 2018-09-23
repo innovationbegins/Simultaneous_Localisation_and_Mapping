@@ -88,7 +88,9 @@ classdef Obstacle < handle
                 measurements = zeros(size(meas_global));
 
                 if ~isempty(meas_global)
-                    % Transform to range-bearing measurement in local frame
+                
+%Transform to range-bearing measurement in local frame.
+
                     measurements(2:3, :) = scanPoint(rob.R, meas_global(2:3, :));
                     measurements(1, :) = meas_global(1, :);
                 else
